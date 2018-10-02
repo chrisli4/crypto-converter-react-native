@@ -1,4 +1,4 @@
-package com.converter;
+package com.chrisl4.converter;
 
 import android.app.Application;
 
