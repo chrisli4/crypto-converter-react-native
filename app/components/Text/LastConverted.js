@@ -26,12 +26,12 @@ const LastConverted = ({
   return (
     <View style={containerStyles}>
       <View style={inContainerStyles}>
-        <Text style={titleStyles}>Conversion Time</Text>
+        <Text style={titleStyles}>CONVERSION TIME</Text>
         <Text style={textStyles}>{ date }</Text>
       </View>
       <View style={styles.separator} />
       <View style={inContainerStyles}>
-        <Text style={titleStyles}>Rate</Text>
+        <Text style={titleStyles}>RATE</Text>
         <Text style={textStyles}>
           <Text>
             { rate }

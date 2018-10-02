@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 import styles from './styles';
 
+const toUpperCase = text => text.toUpperCase();
+
 const CurrencyButton = ({
   buttonText, headerText, fullName, textColor, symbolColor,
 }) => {
@@ -21,9 +23,9 @@ const CurrencyButton = ({
 
   return (
     <View>
-      <Text style={headerStyle}>{headerText}</Text>
+      <Text style={headerStyle}>{toUpperCase(headerText)}</Text>
       <Text style={symbolStyle}>{buttonText}</Text>
-      <Text style={textStyle}>{fullName}</Text>
+      <Text style={textStyle}>{toUpperCase(fullName)}</Text>
     </View>
   );
 };
