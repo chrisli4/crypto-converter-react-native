@@ -23,7 +23,7 @@ const CurrencyButton = ({
 
   return (
     <View>
-      <Text style={headerStyle}>{toUpperCase(headerText)}</Text>
+      <Text style={headerStyle}>{headerText}</Text>
       <Text style={symbolStyle}>{buttonText}</Text>
       <Text style={textStyle}>{toUpperCase(fullName)}</Text>
     </View>

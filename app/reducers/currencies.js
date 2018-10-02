@@ -12,12 +12,27 @@ import {
 const initialState = {
   baseCurrency: 'BTC',
   quoteCurrency: 'ETH',
-  amount: ['0'],
+  amount: '0',
   conversions: {},
   error: null,
 };
 
-const assignDecimal = arr => (arr.indexOf('.') === -1 ? [...arr, '.'] : [...arr]);
+const addDecimal = amount => {
+  if(amount.charAt(0) === '0' && amount.length === 1 && amount.indexOf('.') === -1) {
+    return amount + '.';
+  }
+  if(amount.indexOf('.') === -1) {
+    return amount + '.';
+  }
+  return amount;
+}
+
+const addDigit = (amount, digit) => {
+  if(amount.charAt(0) === '0' && amount.length === 1) {
+    return digit;
+  }
+  return amount + digit;
+}
 
 const setConversions = (state, action) => {
   let baseConversion = {
@@ -54,17 +69,17 @@ const reducer = (state = initialState, action) => {
     case ADD_CURRENCY_DIGIT:
       return {
         ...state,
-        amount: [...state.amount, action.digit],
+        amount: addDigit(state.amount, action.digit)
       };
     case CLEAR_CURRENCY_AMOUNT:
       return {
         ...state,
-        amount: ['0'],
+        amount: '0',
       };
     case ADD_CURRENCY_DECIMAL:
       return {
         ...state,
-        amount: assignDecimal(state.amount),
+        amount: addDecimal(state.amount),
       };
     case CHANGE_BASE_CURRENCY:
       return {

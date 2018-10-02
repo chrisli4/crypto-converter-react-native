@@ -19,7 +19,7 @@ import {
 
 class Home extends Component {
   static propTypes = {
-    amount: PropTypes.array,
+    amount: PropTypes.string,
     baseCurrency: PropTypes.string,
     baseFullName: PropTypes.string,
     baseRate: PropTypes.string,
@@ -98,7 +98,12 @@ class Home extends Component {
       theme,
     } = this.props;
 
-    const baseAmount = parseFloat(amount.join(''));
+    let baseAmount = 0;
+    const parsed = parseFloat(amount);
+
+    if(!Number.isNaN(parsed) && parsed > 0) {
+      baseAmount = parsed;
+    }
 
     let rate = '--';
 
@@ -123,7 +128,7 @@ class Home extends Component {
         />
         <LastConverted
           rate={rate}
-          date={date.toString()}
+          date={date}
           baseCurrency={baseCurrency}
           quoteCurrency={quoteCurrency}
           backgroundColor={theme.secondaryColor}
@@ -133,10 +138,10 @@ class Home extends Component {
         <Separator />
         <InputWithButton
           buttonText={baseCurrency}
-          headerText="convert from:"
+          headerText="CONVERT FROM:"
           fullName={baseFullName}
           onPress={this.handlePressBaseCurrency}
-          amount={baseAmount.toString()}
+          amount={amount}
           backgroundColor={theme.secondaryColor}
           textColor={theme.primaryText}
           symbolColor={theme.secondaryText}
@@ -144,7 +149,7 @@ class Home extends Component {
         <Separator />
         <InputWithButton
           buttonText={quoteCurrency}
-          headerText="convert to:"
+          headerText="CONVERT TO:"
           fullName={quoteFullName}
           onPress={this.handlePressQuoteCurrency}
           amount={quotePrice}
