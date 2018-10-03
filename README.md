@@ -1,8 +1,8 @@
 # CryptoCurrency Converter
 
-<img src="/images/splash.png" width="300" height="500" />
-<img src="/images/dark.png" width="300" height="500" />
-<img src="/images/light.png" width="300" height="500" />
+<img src="/images/splash.png" width="200" height="400" />
+<img src="/images/dark.png" width="200" height="400" />
+<img src="/images/light.png" width="200" height="400" />
 
 Convert between cryptocurrencies using live exchange rates, powered by CryptoCompare API. Supports most popular cryptocurrencies.
 
