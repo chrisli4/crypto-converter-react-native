@@ -1,6 +1,7 @@
 # CryptoCurrency Converter
 
 ![Splash Screen](/images/splash.png)
+<img src="/images/splash.png" width="200" height="500" />
 
 ![Image 1](/images/dark.png)
 
